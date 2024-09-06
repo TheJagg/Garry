@@ -4,9 +4,6 @@ import discord.embeds
 import sys
 import os
 
-sys.path.append(os.path.abspath("./"))
-from config import test_guild
-
 class General(commands.Cog):
     def __init__(self, bot: commands.bot):
         self.bot = bot
