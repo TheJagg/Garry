@@ -3,27 +3,30 @@
 
 Garry is a discord.py bot created as a hobby. This bot contains the basics for now but will likely expand in the future.
 
-## Installation
-
-### Prerequisites
+## Prerequisites
 
 To use Garry you will need Python and some additional libraries installed.
 
-**Python** - You can install it from [Python.org](https://www.python.org/)
+**Python** - You can install this from [Python.org](https://www.python.org/)
 
-**Pillow** - (Used for the level progress bar)
+**Pillow** - (Used for the level progress bar image)
 ```bash
 pip install pillow
 ```
+## Installation
 
+Before running the bot, ensure you have run the **setup.py** script. This script will create a **config.py** file and a **levels.db** file.
 
-## Usage
+The **config.py** file is where you will store your bot token for running the bot. You will need to edit this file once created and paste in your token.
 
-Create a **config.py** file in the root folder and input the following
 ```python
 #Tokens
-token = <Your Discord App Token>
+token = '<Your Discord App Token>'
 ```
+
+The **levels.db** file will be used to store the discord users level data, the setup script will create all the necessary tables and you should not need to mess with this.
+
+## Usage
 
 Run **Main.py** in a bash or terminal window 
 
