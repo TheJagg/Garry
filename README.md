@@ -40,3 +40,7 @@ Please make sure to update tests as appropriate.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Attributions
+
+Bot photo by [Ludovic Migneault](https://unsplash.com/@dargonesti?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/man-in-gray-button-up-shirt-5xbCj_VWKcs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
