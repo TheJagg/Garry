@@ -8,14 +8,11 @@ import os
 import io
 from PIL import Image, ImageDraw
 
-#Import config data
-sys.path.append(os.path.abspath("./"))
-from config import test_guild
-
 class LevelSys(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
+        
+    #Listener to print to terminal if the cog has loaded correctly
     @commands.Cog.listener()
     async def on_ready(self):
         print("Leveling is online!")
@@ -60,7 +57,6 @@ class LevelSys(commands.Cog):
         connection.close()
 
     @app_commands.command(name="level",description="A command to check on your server level.")
-    @app_commands.guilds(discord.Object(id=test_guild))
     async def level(self, interaction: discord.Interaction):
         member_id = interaction.user.id
         guild_id = interaction.guild.id

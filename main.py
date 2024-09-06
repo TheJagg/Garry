@@ -4,7 +4,7 @@ import asyncio
 import logging
 from discord import app_commands
 from discord.ext import commands, tasks
-from config import token, test_guild
+from config import token
 from itertools import cycle
 
 logging.basicConfig(level=logging.INFO)
@@ -71,8 +71,6 @@ async def sync_commands():
     try:
         synced_commands = await bot.tree.sync()
         print(f'Synced {len(synced_commands)} commands.')
-        synced_commands = await bot.tree.sync(guild=discord.Object(id=test_guild))
-        print(f'Synced {len(synced_commands)} guild commands.')
     except Exception as e:
         print(f'Whoops failed to load commands. {e}')
 
