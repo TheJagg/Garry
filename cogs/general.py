@@ -1,0 +1,26 @@
+from discord import app_commands
+from discord.ext import commands
+import discord.embeds
+import sys
+import os
+
+sys.path.append(os.path.abspath("./"))
+from config import test_guild
+
+class General(commands.Cog):
+    def __init__(self, bot: commands.bot):
+        self.bot = bot
+
+    @commands.Cog.listener()
+    async def on_ready(self):
+        print("General is online!")
+
+    @app_commands.command(name="testembed", description="Testing an embed framework.")
+    @app_commands.guilds(discord.Object(id=test_guild))
+    async def testembed(self, interaction: discord.Interaction):
+        emb = discord.Embed(title="Oh lookie here!")
+        emb.set_author(name=interaction.user.name)
+        await interaction.response.send_message(embed=emb)
+
+async def setup(bot):
+    await bot.add_cog(General(bot))

@@ -1,0 +1,9 @@
+#Directories
+__pycache__/
+
+#Configuration files.
+config.py
+
+#Local stored data
+cogs/levels.db
+bot_ideas.txt
