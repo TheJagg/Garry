@@ -28,6 +28,10 @@ async def change_bot_status():
     await bot.change_presence(activity=discord.Game(next(statuses)))
 
 @bot.command()
+async def test(ctx):
+    await ctx.send("Yeaaaa Boiiii")
+
+@bot.command()
 async def load(ctx, extension):
     await load_cog(extension)
     await ctx.channel.purge(limit=1)
