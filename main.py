@@ -29,7 +29,7 @@ async def change_bot_status():
 
 @bot.command()
 async def test(ctx):
-    await ctx.send("Yeaaaa Boiiii")
+    await ctx.send("Something changed.")
 
 @bot.command()
 async def load(ctx, extension):
