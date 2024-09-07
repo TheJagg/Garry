@@ -12,6 +12,10 @@ logging.basicConfig(level=logging.INFO)
 bot = commands.Bot(command_prefix=".",intents=discord.Intents.all())
 statuses = cycle(["Is this thing on?","I need more commands","Someone is robbing a bank!"])
 
+# Check for administrator permissions.
+def is_administrator(interaction: discord.Interaction) -> bool:
+    return interaction.user.guild_permissions.administrator
+
 @bot.event
 async def on_ready():
     print("All shipe have been acounted for, Ready to roll.")
@@ -42,8 +46,8 @@ async def reload(ctx, extension):
     await ctx.channel.purge(limit=1)
     await ctx.send(f'{extension} reloaded!')
 
-@app_commands.command(name="re_sync", description="Updates the app commands that are run on this bot.",)
-@app_commands.checks.has_permissions(administrator=True)
+@bot.tree.command(name="re_sync", description="Updates the app commands that are run on this bot.")
+@app_commands.check(is_administrator)
 async def re_sync(interaction: discord.Interaction):
     await sync_commands()
     await interaction.response.send_message("App commands have been updated.", ephemeral=True)
